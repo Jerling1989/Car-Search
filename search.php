@@ -10,6 +10,19 @@
 		if(!$query) {
 			die('QUERY FAILED' . mysqli_error($connection));
 		}
+
+		while($row = mysqli_fetch_array($query)) {
+			$result = $row['name'];
+
+			?>
+			<ul class="list-unstyled">
+				<?php
+				echo "<li>$result in stock</li>";
+				?>
+			</ul>
+			<?php
+
+		}
 	}
 
 ?>
