@@ -3,6 +3,13 @@
 	$connection = mysqli_connect('localhost', 'root', 'root', 'cars_db');
 
 	$search = $_POST['search'];
-	echo $search;
+
+	if(!empty($search)) {
+		$query = mysqli_query($connection, "SELECT * FROM cars WHERE name LIKE '$search%'");
+
+		if(!$query) {
+			die('QUERY FAILED' . mysqli_error($connection));
+		}
+	}
 
 ?>
