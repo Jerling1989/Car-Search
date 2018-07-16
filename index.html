@@ -27,7 +27,7 @@
 		<br />
 
 		<div class="row">
-			<form id="add-car-form" class="col-6" method="POST" action="">
+			<form id="add-car-form" class="col-6" method="POST" action="add_car.php">
 				<div class="input-group">
 					<input type="text" class="form-control" name="car_name" placeholder="Make and Model" />
 					<div class="input-group-append">
@@ -57,9 +57,38 @@
 					}
 				});
 			});
+
+
+			$('#add-car-form').submit(function(event) {
+				event.preventDefault();
+
+				var postData = $(this).serialize();
+				var url = $(this).attr('action');
+
+				alert(postData);
+			});
 			
-		});
+		}); // END DOCUMENT READY FUNCTION
 	</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
