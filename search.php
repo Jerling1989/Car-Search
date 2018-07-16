@@ -1,6 +1,6 @@
 <?php
 
-	$connection = mysqli_connect('localhost', 'root', 'root', 'cars_db');
+	require 'db.php';
 
 	$search = $_POST['search'];
 
